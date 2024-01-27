@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #FFEEDD;
+}
+
+.card {
+    margin: 0 10px;
+
+
+    width: 46%;
+    background-color: white;
+    border-radius: 15px;
+    height: auto;
+    overflow: hidden;
+    /* padding: 10px; */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.row {
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.card p {
+    margin: 0;
+    font-size: 12px;
+    margin-left: 12px;
+}
+
+
+.card span {
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.card.row.align-items-center {
+    align-items: center;
+}
+
+.col-md-10 {
+    background: #E8E8E8 !important;
+}
+
+.col-md-9 {
+    background: #E8E8E8 !important;
+}
+
+.delete-icon {
+    color: #818181;
+    cursor: pointer;
+    position: absolute;
+
+    top: 4px;
+    right: 30px;
+
+}
+
+.view-icon {
+    color: #818181;
+    cursor: pointer;
+    position: absolute;
+
+    bottom: 4px;
+    right: 30px;
+
+}
+
+.heading-card {
+    color: #A08A88;
+    padding: 1px 0;
+}

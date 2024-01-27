@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <!-- TODO: Include Font Awesome file here -->
+    <!-- TODO: Include Google Fonts file here -->
+    <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ScriBBler</title>
+</head>
+
+<body>
+    <!-- TODO: Include all your code for the header and home page here -->
+    <nav>
+        <div class="brand">
+            <h1>ScriBBler</h1>
+            <h2>Explore, Imagine, Create</h2>
+        </div>
+        <div class="buttons">
+            <a href="#" class="button" data-toggle="modal" data-target="#exampleModal">Sign Up</a>
+            <a href="#" class="button" data-toggle="modal" data-target="#exampleModal2">Sign In</a>
+        </div>
+    </nav>
+    <div class="post-container">
+        <h3 class="post-heading" contenteditable="false" readonly><span class="update" id="update"
+                style="display: none;">UPDATED : </span>Everything you should know about ‘module’ & ‘require’ in Node.js
+        </h3>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="post-author">Sristhi Gupta</p>
+            </div>
+            <div class="col-md-6 text-right">
+                <span class="btn btn-danger btn-sm edit-btn" style="font-size: 12px;" onclick="editPost()">
+                    Edit &nbsp;<i class="fa-solid fa-pen-to-square"></i>
+                </span>
+                <span class="btn btn-danger btn-sm save-btn" style="font-size: 12px; display: none;"
+                    onclick="savePost()">
+                    Save &nbsp;<i class="fas fa-save"></i>
+                </span>
+            </div>
+        </div>
+
+
+        <p class="post-description" contenteditable="false" readonly>
+            <span class="update" id="update" style="display: none;">UPDATED :<br> </span>
+            Node js treats exch JavaScript file as a separate module, For instance, if you havea file containing ome
+            code and this files named xyz, then this file is tweated asa module in Node, and you
+            can sa that you've created module armed xyz. Le's tke an example to understand this better You have a file
+            named citclejs which consists ofthe logic forcalevlating the are & the
+            Circumference ofa ctele ofa gwen radius. You can call ice jp file a module named cele. You might be
+            wondering why is there a need to have miltiple modules? You could have just
+            wren all the code in single module, Well, its very amportaut to write modular code. By modular, I mean to
+            say that your code should be independent and should be Loosely coupled
+            Imagine that there's large application and you have all your code wren in just one plac, just on fil. Too
+            messy, right? How does the code write inside a module run? Before executing
+            the code writen inside a module, Nede takes the entre code and encloses i within & fancion ‘wrapper. The
+            syntax of this fUncton wrapper ia The entre code writen inside a module
+            private to the module, unless explicitly sated (exported) otherwise, This 8 the mow wgnificant advantage of
+            having modules in Node,s, Even uf ou define a global varabe i a module using
+            var, lt ot const keywords, the vanables are scoped locally to the module rather than being scoped globally.
+            This happens because each module has a function wrapper of ws own and the code
+            ‘writen inside one function i local to that fonction and cannot be accessed ouside this function. Imagine
+            that there are two modules — A and B. The code vite inside the module Ais
+            ‘enclosed within the function wrapper corerponding tothe module A. Similar thing happens with the code
+            written inside the module B, Because the code pertaining to both the modules
+            ‘enclosed within different functions, these factions wil not be abl vo access the code ofeach other
+            (Remember each function in JavaScript hat sts own local scope”) This is the reason why
+            module A cannot access the code writen inside module B and vice-versa The five parameters — exports require,
+            module, filename, —dimame are available inside each module in Node
+            ‘Though these parameters ae plobol 0 the code within a module yet they are local to the module (Because of
+            the function wrapper as explained above) These parameters provide valuable
+            information related to 2 module. Let's revisit the citcle module, which you looked a eaier There are vee
+            constructs defined inthis module — a constant variable PI, a function named
+            caleulated\rea and another function named calculateCitcumference, An important pont to keep in mind is that
+            all these constructs are private to the circle module by deft. It means that you
+            cannot wie these constructs in any other miodsle unless explicitly specified, So, the question that arses
+            now is how do You specify vometbing in a module that can be used by some other
+            riodule? This is when the module & require parameters ofthe function wrapper are helpful Let's dicuss these
+            two parameters ia this article, module The module pranteter (eater a keyword
+            ‘ne module in Node) refers to the object representing the cureat module. expomt is a key of the module
+            objec, the correyponding value of which san object. The default value of
+            module exports object is {} (empty object), You can check ths by logging the value of module keyword inside
+            any module. Let's check what isthe valve of module parameter inside the cicle
+            ‘module. Notice that there i a console log(module); statement at the end ofthe code inthe file given above.
+            When you se the output, 1 wil log the module obect, which has a key named
+            fexports and the value corresponding to this key 8 {} (an empty objet), Now, what does the module exports
+            object do? Well, used for defiting stuf that can be exported by a module.
+            ‘Whatever is exported from a module can, tar, be made avaable to other modules. Exporting something s qute
+            easy, You ust need 10 adit tothe module exports object. Thee ae three
+            ways 1 add something tothe module exports object tobe exported. Let's discs these methods one by one
+
+
+        </p>
+        <span class="btn btn-danger btn-sm fades" id="likeButton" style="font-size: 12px;" onclick="saveLike()">
+            <i class="fa-solid fa-thumbs-up"></i>&nbsp; Like
+        </span><br>
+        <small id="likeCount" class="muted">Be The First One To Like This!</small>
+
+        <div class="comment-container mt-3">
+            <textarea id="commentInput" class="form-control comment-input" placeholder="Leave a comment..."></textarea>
+            <button class="btn btn-danger comment-btn btn-sm mt-3" onclick="postComment()">
+                Comment
+            </button>
+
+            <div class="comment-section mt-4">
+                <h5>All Comments</h5>
+                <div id="commentList" style="background-color: #E2E4E6; display: none;" class="p-3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Get Started</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" required id="name" name="name" class="form-control"
+                                placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" id="username" name="username"
+                                placeholder="Choose a username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password:</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                                placeholder="Confirm your password" required>
+                        </div>
+                        <button onclick="closeModal()" class="btn btn-success w-100">Sign Up</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog " role="document">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Welcome Back!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" class="form-control" name="username"
+                                placeholder="Enter your username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" class="form-control" name="password"
+                                placeholder="Enter your password" required>
+                        </div>
+
+                        <button class="btn btn-success w-100">Sign In</button>
+
+                        <p class="error-message" id="signInError"></p>
+                        <div style="text-align: center;">
+                            <p>Not a member? <a href="#" onclick="showSignUpModal()">Sign Up</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+<script src="../../scripts/post.js"></script>
+
+</html>

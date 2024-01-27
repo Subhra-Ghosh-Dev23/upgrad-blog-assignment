@@ -1,0 +1,49 @@
+
+        .post-container {
+            /* max-width: 800px; */
+            margin: 0 auto;
+            margin: 0 100px;
+        }
+
+        .post-heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .post-author {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .post-description {
+            text-align: justify;
+            font-size: 12px;
+        }
+        .post-heading,
+        .post-description {
+            border: none;
+        }
+
+        .edit-mode {
+            border: 1px solid red;
+        }
+
+        .edit-btn,
+        .save-btn {
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .like-btn {
+            cursor: pointer;
+            font-size: 12px;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fades {
+            opacity: 0.8;
+        }
+        .comment-text{
+            padding: 10px;
+            background-color: white;
+        }
+   
